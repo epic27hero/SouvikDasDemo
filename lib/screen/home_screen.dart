@@ -34,7 +34,18 @@ class _HomeScreenState extends State<HomeScreen> {
               key: _formKey,
               child: Column(
                 children: <Widget>[
-                  Image.asset('assets/images/github--v1.png'),
+                  CircleAvatar(
+                    radius: 80.0,
+                    backgroundColor: Color(0xff33ffff) ,
+                    child: CircleAvatar(
+                      radius: 70.0,
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: NetworkImage('https://library.kissclipart.com/20190405/hve/kissclipart-computer-icons-github-clip-art-logo-dc9f8834e57de4e9.png'),
+                     // backgroundImage: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRWjScmaue5Mtd_4MMkAZoc5IbfRml3uZb2fGfcYJt8-QXgJeE9&usqp=CAU'),
+
+                    ),
+                  ),
+//                  Image.asset('assets/images/github--v1.png'),
                   SizedBox(
                     height: 50,
                   ),
@@ -56,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: InputDecoration(
                           contentPadding: EdgeInsets.all(10),
                           hintStyle: TextStyle(color: Colors.black),
-                          hintText: "Enter Your github Username",
+                          hintText: "Your Github Username Here",
                           border: InputBorder.none),
                     ),
                   ),
@@ -64,9 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                   Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xff33ffff), Color(0xff000099)],
+                        begin: FractionalOffset.topRight,
+                        end: FractionalOffset.bottomLeft,
+                      ),
                         borderRadius: BorderRadius.circular(50),
-                        color: Color(0xff330033)),
+//                        color: Colors.red,
+
+                    ),
                     child: FlatButton(
+
                       onPressed: () {
                         submit();
                       },

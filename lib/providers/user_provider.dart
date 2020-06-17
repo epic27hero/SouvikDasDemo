@@ -10,6 +10,7 @@ class UserProvider with ChangeNotifier {
 
   Future<void> getUserProfile(String username) async {
     final url = '${Api.api}/users/${username}';
+    //https://api.github.com/users/epic27hero
 
     try {
       final responce =

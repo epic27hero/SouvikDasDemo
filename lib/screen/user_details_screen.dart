@@ -17,7 +17,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
   var _isLoading = false;
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
+
     super.didChangeDependencies();
     if (_init) {
       setState(() {
@@ -44,7 +44,17 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.username),
-          backgroundColor: Color(0xff330033),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xff33ffff), Color(0xff000099)],
+                begin: FractionalOffset.topRight,
+                end: FractionalOffset.bottomLeft,
+              ),
+            ),
+          ),
+
+//          backgroundColor: Color(0xff330033),
           centerTitle: true,
           elevation: 0,
         ),
@@ -72,7 +82,14 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                               ),
                               Container(
                                 height: size.height * 0.23,
-                                color: Color(0xff330033),
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [Color(0xff000099),Color(0xff33ffff)],
+                                  begin: FractionalOffset.topRight,
+                                  end: FractionalOffset.bottomLeft,
+                                ),
+                              ),
+
                               ),
                               Positioned(
                                 top: size.height * 0.15,
@@ -88,7 +105,9 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                                           child: CircularProgressIndicator(
                                             valueColor:
                                                 AlwaysStoppedAnimation<Color>(
-                                                    Color(0xff330033)),
+                                                    Color(0xff330033),
+                                                ),
+
                                           ),
                                           width: 121.0,
                                           height: 121.0,
@@ -157,7 +176,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                           children: <Widget>[
                             Row(
                               children: <Widget>[
-                                Image.asset('assets/images/user-shield.png'),
+//                                Image.asset('assets/images/user-shield.png'),
+                              Icon(Icons.person_add),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Text(
@@ -182,7 +202,8 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                             Row(
 //                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
-                                Image.asset('assets/images/github-2.png'),
+//                                Image.asset('assets/images/github-2.png'),
+                              Icon (Icons.person),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 8.0),
                                   child: Text(
@@ -228,8 +249,9 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                               children: <Widget>[
                                 Row(
                                   children: <Widget>[
-                                    Image.asset(
-                                        'assets/images/user-male-circle.png'),
+//                                    Image.asset(
+//                                        'assets/images/user-male-circle.png'),
+                                  Icon(Icons.collections),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8.0),
                                       child: Text('Public Repositries',

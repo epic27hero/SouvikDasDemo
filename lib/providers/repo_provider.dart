@@ -14,6 +14,8 @@ class RepositriesProvider extends ChangeNotifier {
 
   Future<void> getRepositriesList(String username) async {
     final link = '${Api.api}/users/${username}/repos';
+    //https://api.github.com/users/epic27hero/repos
+    print (link);
 
     try {
       final responce = await http
